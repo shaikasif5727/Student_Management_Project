@@ -1,0 +1,262 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.header-content h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.header-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Sections */
+.controls-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.content-section {
+  display: grid;
+  gap: 2rem;
+}
+
+.form-section,
+.list-section {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.list-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-lg {
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* Button Colors */
+
+.btn-primary {
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg,#868f96,#596164);
+  color: #fff;
+}
+
+.btn-success {
+  background: linear-gradient(135deg,#11998e,#38ef7d);
+  color: #fff;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg,#4facfe,#00f2fe);
+  color: #fff;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg,#f093fb,#f5576c);
+  color: #fff;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Alerts */
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.5rem;
+
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+
+  animation: slideIn 0.25s ease;
+}
+
+.alert-error {
+  background: linear-gradient(135deg,#f093fb,#f5576c);
+}
+
+.alert-success {
+  background: linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Empty State */
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #888;
+}
+
+/* Loading Spinner */
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+
+  border: 4px solid #eee;
+  border-top: 4px solid #667eea;
+
+  border-radius: 50%;
+  margin: 2rem auto;
+
+  animation: spin 1s linear infinite;
+}
+
+/* Footer */
+
+.app-footer {
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color: white;
+  text-align: center;
+  padding: 1.8rem;
+  margin-top: 2rem;
+}
+
+/* Animations */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .header-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .controls-section {
+    flex-direction: column;
+  }
+
+  .btn-lg {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-section,
+  .list-section {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+}
